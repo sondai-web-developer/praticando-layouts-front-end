@@ -1,0 +1,146 @@
+/*Menu*/
+
+#menu{
+    background: #1D1E20;
+    padding:10px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+#menu a{
+    color: #fff;
+}
+
+#logo{
+    font-size:24px;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista_menu{
+    position: absolute;
+    top:45px;
+    right:-1400px;
+    background-color: #1D1E20;
+    width:100%;
+    text-align: center;
+}
+
+#lista_menu ul{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+#lista_menu ul li{
+    margin:0 60px;
+}
+
+#lista_menu ul li + li{
+    margin-top:20px;
+}
+
+#lista_menu ul li a{
+    padding-top:15px;
+    padding-bottom: 15px;
+    font-size:18px;
+}
+
+#icone_menu_mobile{
+    display: block;
+    width:36px;
+    height:36px;
+    color:#fff;
+    border-top: 4px solid currentColor;
+    position: relative;
+    cursor:pointer;
+    top:7px;
+}
+
+#icone_menu_mobile::before,
+#icone_menu_mobile::after{
+    content:'';
+    display:block;
+    height:4px;
+    margin-top: 6px;
+    background:currentColor;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+#icone_menu_mobile.transformar{
+    border-top-color: transparent;
+}
+
+#icone_menu_mobile.transformar::before{
+    margin-top: 0px;
+    top:6px;
+    transform: rotate(45deg);
+}
+
+#icone_menu_mobile.transformar::after{
+    margin-top:0px;
+    top:2px;
+    transform:rotate(135deg);
+}
+
+@keyframes mostrar{
+    from{
+        opacity:0;
+        transform: translate3d(30px, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+#lista_menu.mostrar{
+    right:0px;
+    animation: mostrar 0.3s forwards;
+}
+
+@media (min-width:380px){
+    #menu{
+        padding: 5px 30px;
+    }
+
+    #lista_menu{
+        width:300px;
+    }
+}
+
+@media (min-width:680px){
+    #icone_menu_mobile{
+        display: none;
+    }
+
+    #lista_menu{
+        position: static;
+        width: auto;
+    }
+
+    #lista_menu ul{
+        flex-direction: row;
+        padding: 13px 0px;
+    }
+
+    #lista_menu ul li{
+        margin:0px;
+    }
+
+    #lista_menu ul li + li{
+        margin-top:0px;
+        margin-left:15px;
+    }
+    
+    #lista_menu ul li a{
+        padding:0 10px;
+        font-size:18px;
+    }
+}
