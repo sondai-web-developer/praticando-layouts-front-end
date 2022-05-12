@@ -1,0 +1,1 @@
+(()=>{var e,t;e=document.querySelector('[data-menu-mobile="icone"]'),t=document.querySelector('[data-menu-mobile="lista"]'),e.addEventListener("click",(function(){e.classList.toggle("transformar"),t.classList.toggle("mostrar")}))})();
