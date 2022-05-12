@@ -11,3 +11,26 @@ function menuMobile(){
 }
 
 menuMobile();
+
+function scrollSuave(){
+    const linksInternos = document.querySelectorAll('[data-menu="item"]');
+    const menuHeight = document.querySelector('[data-menu="barra"]').offsetHeight;
+
+    function scrollToSection(event){
+        event.preventDefault();
+        const href = event.currentTarget.getAttribute('href');
+        const section = document.querySelector(href);
+
+        const topo = section.offsetTop - menuHeight;
+        window.scrollTo({
+            top: topo,
+            behavior: 'smooth',
+        });
+    }
+
+    linksInternos.forEach((link) => {
+        link.addEventListener('click', scrollToSection);
+    });
+}
+
+scrollSuave();
