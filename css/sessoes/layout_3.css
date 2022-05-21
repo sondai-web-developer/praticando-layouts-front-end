@@ -26,11 +26,6 @@
         gap:10px;
     }
 
-    .titulo{
-        grid-column: 1 / -1;
-        grid-row: 1;
-    }
-
     #item_3_principal{
         grid-column: 1;
         grid-row: 2 / 4;
