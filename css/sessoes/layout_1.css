@@ -1,92 +1,115 @@
 /*Layout 1*/
 
-.titulo{
-    text-align: center;
-    padding-bottom:60px;
-}
-
 #layout_1{
-    padding: 120px 0 60px 0;
+    padding: 110px 0 60px 0;
 }
 
-#lista_itens{
+#lista_itens_layout_1{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.item{
+.item_layout_1{
     text-align: center;
-    flex: 1 1 300px;
-    margin-left: 10px;
-    margin-right: 10px;
+    flex: 1 1 120px;
 }
 
-.item + .item{
-    margin-top:40px;
+/*Esse seletor nth-child(n+3) vai selecionar todos os elementos a partir do
+terceiro*/
+.item_layout_1:nth-child(n+3){
+    margin-top:20px;
 }
 
-.item h2{
-    margin-top: 15px;
-    font-size:18px;
+.item_layout_1:nth-child(odd){
+    margin-right: 3px;
 }
 
-@media (min-width:380px){
-    #lista_itens{
-        padding:0 30px;
+.item_layout_1:nth-child(even){
+    margin-left: 3px;
+}
+
+.item_layout_1 h2{
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+@media (min-width:380px) {
+    .item_layout_1{
+        flex: 1 1 170px;
     }
 
-    .item{
-        margin-left:0px;
-        margin-right:0px;
+    .item_layout_1:nth-child(odd){
+        margin-right: 5px;
+    }
+    
+    .item_layout_1:nth-child(even){
+        margin-left: 5px;
     }
 }
 
-@media (min-width:500px){
-    .item{
-        flex:1 1 200px;
+@media (min-width:540px){
+    #lista_itens_layout_1{
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
-    #lista_itens div:nth-child(-n+2) {
-        margin-top:0px;
+    .item_layout_1{
+        flex: 1 1 220px;
     }
 
-    #lista_itens div:nth-child(odd){
+    .item_layout_1:nth-child(odd){
         margin-right: 10px;
     }
-
-    #lista_itens div:nth-child(even){
+    
+    .item_layout_1:nth-child(even){
         margin-left: 10px;
     }
 }
 
-@media (min-width:707px){
-    #lista_itens div:nth-child(3) {
-        margin-top: 0px;
+@media (min-width:760px){
+    .item_layout_1{
+        flex:1 1 200px;
     }
 
-    #lista_itens div:nth-child(odd){
-        margin-right:0px;
+    .item_layout_1:nth-child(3){
+        margin-top:0px;
     }
 
-    #lista_itens div:nth-child(even){
-        margin-left:0px;
+    .item_layout_1:nth-child(odd){
+        margin-right: 0px;
+    }
+    
+    .item_layout_1:nth-child(even){
+        margin-left: 0px;
     }
 
-    #lista_itens div:nth-child(3n-1){
-        margin-right:15px;
-        margin-left:15px;
+    /*Esse selector nth-child(3n-1) vai começar selecionando o segundo elemento,
+    e vai selecionar a cada dois elementos. Por exemplo, vai selecionar o 2º,
+    5º, 8º, 11º... elementos. É bom pra quando tiver com três colunas.*/
+    .item_layout_1:nth-child(3n-1){ 
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
-@media (min-width:907px){
-    .item {
-        flex: 1 1 260px;
+@media (min-width: 890px){
+    .item_layout_1{
+        flex:1 1 260px;
+    }
+
+    .item_layout_1 h2{
+        font-size: 20px;
     }
 }
 
-@media (min-width:1116px){
-    .item {
-        flex: 1 1 380px;
+@media (min-width: 1115px){
+    #lista_itens_layout_1{
+        padding-left: 0px;
+        padding-right: 0px;
+        max-width: 960px;
+        margin:0 auto;
     }
 }
