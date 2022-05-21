@@ -16,6 +16,8 @@
 
 @media (min-width:510px){
     #layout_3{
+        padding-left: 0px;
+        padding-right: 0px;
         max-width: 960px;
         margin: 0 auto;
         grid-template-columns:repeat(2, 1fr);
